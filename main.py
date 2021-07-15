@@ -1,13 +1,24 @@
 from tkinter import *
-
+from tkinter.font import Font
 root = Tk()
 
 root.title('Calculator')
 
 root.iconbitmap('C:/Users/dell/Downloads/Calculator.ico')
 
-e = Entry(root, width=40, borderwidth=4)
-e.grid(row=0, column=0, columnspan=3, padx=6, pady=2)
+root.configure(bg='#03FC5A')
+
+italino = Font(
+    family='Helvetica',
+    size=14,
+    weight='bold'
+)
+
+
+
+
+e = Entry(root, width=60, borderwidth=4,bg='#DFF1FF',font=('Helvatica',10,'bold'))
+e.grid(row=0, column=0, columnspan=3, padx=6, pady=2,ipady=5)
 
 f_num = ''
 
@@ -16,6 +27,7 @@ def clicko(number):
     num = e.get()
     e.delete(0, END)
     e.insert(0, num + number)
+
 
 
 def clear_fun():
@@ -97,24 +109,24 @@ def equal_fun():
 
 # defining the buttons
 # Numbers
-btn_1 = Button(root, text='1', padx=40, pady=20, command=lambda: clicko('1'))
-btn_2 = Button(root, text='2', padx=40, pady=20, command=lambda: clicko('2'))
-btn_3 = Button(root, text='3', padx=40, pady=20, command=lambda: clicko('3'))
-btn_4 = Button(root, text='4', padx=40, pady=20, command=lambda: clicko('4'))
-btn_5 = Button(root, text='5', padx=40, pady=20, command=lambda: clicko('5'))
-btn_6 = Button(root, text='6', padx=40, pady=20, command=lambda: clicko('6'))
-btn_7 = Button(root, text='7', padx=40, pady=20, command=lambda: clicko('7'))
-btn_8 = Button(root, text='8', padx=40, pady=20, command=lambda: clicko('8'))
-btn_9 = Button(root, text='9', padx=40, pady=20, command=lambda: clicko('9'))
-btn_0 = Button(root, text='0', padx=40, pady=20, command=lambda: clicko('0'))
-btn_plus = Button(root, text='+', padx=39, pady=20, command=add_fun)
-btn_minus = Button(root, text='-', padx=41, pady=20, command=sub_fun)
+btn_1 = Button(root, text='1', padx=60, pady=30, bg='#00DB8C', font=italino, command=lambda: clicko('1'))
+btn_2 = Button(root, text='2', padx=60, pady=30, bg='#00DB8C',font=italino, command=lambda: clicko('2'))
+btn_3 = Button(root, text='3', padx=60, pady=30, bg='#00DB8C',font=italino, command=lambda: clicko('3'))
+btn_4 = Button(root, text='4', padx=60, pady=30, bg='#00DB8C',font=italino, command=lambda: clicko('4'))
+btn_5 = Button(root, text='5', padx=60, pady=30, bg='#00DB8C',font=italino, command=lambda: clicko('5'))
+btn_6 = Button(root, text='6', padx=60, pady=30, bg='#00DB8C',font=italino, command=lambda: clicko('6'))
+btn_7 = Button(root, text='7', padx=60, pady=30, bg='#00DB8C',font=italino, command=lambda: clicko('7'))
+btn_8 = Button(root, text='8', padx=60, pady=30, bg='#00DB8C',font=italino, command=lambda: clicko('8'))
+btn_9 = Button(root, text='9', padx=60, pady=30, bg='#00DB8C',font=italino, command=lambda: clicko('9'))
+btn_0 = Button(root, text='0', padx=60, pady=30, bg='#00DB8C',font=italino, command=lambda: clicko('0'))
+btn_plus = Button(root, text='+', padx=60, pady=30, bg='#00DB8C',font=italino, command=add_fun)
+btn_minus = Button(root, text='-', padx=62, pady=30, bg='#00DB8C',font=italino, command=sub_fun)
 
-btn_mul = Button(root, text='*', padx=40, pady=20, command=mul_fun)
-btn_div = Button(root, text='/', padx=40, pady=20, command=div_fun)
-btn_clr = Button(root, text='C', padx=39, pady=20, command=clear_fun)
+btn_mul = Button(root, text='*', padx=62, pady=30, bg='#00DB8C',font=italino, command=mul_fun)
+btn_div = Button(root, text='/', padx=63, pady=30, bg='#00DB8C',font=italino, command=div_fun)
+btn_clr = Button(root, text='C', padx=58, pady=30, bg='#00DB8C',font=italino, command=clear_fun)
 
-btn_equal = Button(root, text='=', padx=134, pady=20, command=equal_fun)
+btn_equal = Button(root, text='=', padx=212, pady=30, bg='#00B7A4',font=italino, command=equal_fun)
 
 # shoving in
 btn_1.grid(row=3, column=0)
