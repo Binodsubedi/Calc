@@ -95,7 +95,10 @@ def equal_fun():
             e.insert(0, f_num * int(second_num))
 
         else:
-            e.insert(0, f_num / int(second_num))
+            try:
+                e.insert(0, f_num / int(second_num))
+            except BaseException as err:
+                e.insert(0, err)
 
 
     elif f_num == '' and (second_num == '' or second_num == []):
